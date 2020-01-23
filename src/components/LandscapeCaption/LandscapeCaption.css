@@ -1,0 +1,86 @@
+﻿.Post-user-avatar {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.Post-and-caption {
+    display: inline-block;
+}
+
+.LPost-caption-caption {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 0px;
+}
+
+.Post-caption {
+    padding: 0px 16px;
+}
+
+.Post-caption strong {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+}
+
+.vjs-fade-out {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.Post-caption-comment button {
+    background-color: white;
+    border-width: 0px;
+    padding-left: 0px;
+    color: grey;
+}
+
+.Post-caption-comment-time {
+    padding: 4px 0px 10px;
+    font-size: 10px;
+    color: grey;
+}
+
+.Post-caption {
+    font-size: 14px;
+}
+
+.Post-caption-comment-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Post-input {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #DCDCDC;
+    background-color: #fff;
+    height: 50px;
+}
+
+.Post-input input {
+    border-width: 0px;
+    color: grey;
+    font-size: 14px;
+    padding: 15px;
+    width: 80%;
+}
+
+.Post-input input:focus {
+    color: black;
+}
+
+.Post-input button {
+    padding: 15px;
+    border-width: 0px;
+    background-color: #fff;
+}
+
+#empty {
+    color: lightskyblue;
+}
+
+#non-empty {
+    color: dodgerblue;
+}

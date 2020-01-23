@@ -1,0 +1,36 @@
+﻿.likes {
+    display: block;
+    padding: 0px 0px;
+    width: 46px;
+}
+
+.likes #unlike {
+    display: block;
+    background-color: #fff;
+    border-width: 0px;
+    background-position: -393px -391px;
+    background-image: url(../../images/sprite.png);
+    background-size: 490px 450px;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.likes #like {
+    display: block;
+    background-color: #fff;
+    border-width: 0px;
+    background-position: -242px -391px;
+    background-image: url(../../images/sprite.png);
+    background-size: 490px 450px;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.likes strong {
+    display: inline-block;
+    padding: 8px 0px 3px;
+    white-space: nowrap;
+    font-size: 14px;
+}

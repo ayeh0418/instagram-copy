@@ -1,0 +1,85 @@
+/* src/components/Header/Header.css */
+i.Nav {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    -webkit-transition: height 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
+    height: 77px;
+}
+
+nav {
+    border-bottom: 1px solid #DCDCDC;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.Nav-menus {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px 1%;
+}
+
+.Nav-brand-logo {
+    display: inline-block;
+    background-position: -165px 0px;
+    background-image: url(../../images/sprite.png);
+    background-size: 380px 350px;
+    background-repeat: no-repeat;
+    height: 33px;
+    width: 166px;
+}
+
+.Nav-search-bar {
+    display: inline-block;
+    background-image: url(../../images/search.jpg);
+    background-size: 230px 30px;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 230px;
+}
+
+.Nav-others {
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    width: 130px;
+}
+
+.Nav-others-explore {
+    display: inline-block;
+    background-position: -60px -420px;
+    background-image: url(../../images/sprite.png);
+    background-size: 490px 450px;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.Nav-others-notification {
+    display: inline-block;
+    background-position: -150px -390px;
+    background-image: url(../../images/sprite.png);
+    background-size: 490px 450px;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
+
+.Nav-others-profile {
+    display: inline-block;
+    background-position: -372px -208px;
+    background-image: url(../../images/sprite.png);
+    background-size: 490px 450px;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+}
