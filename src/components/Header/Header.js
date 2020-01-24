@@ -1,6 +1,7 @@
 // src/components/Header/index.js
-import React from "react";
-import "./Header.css";
+import React from 'react';
+import './Header.css';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component{
     render(){
@@ -8,8 +9,8 @@ class Header extends React.Component{
 			<nav className="Nav">
 				<div className="Nav-menus">
 					<div className="Nav-brand">
-						<a className="Nav-brand-logo" href="/">
-						</a>
+						<Link className="Nav-brand-logo" to="/">
+						</Link>
 					</div>
 					<div className="Nav-search-bar">
 					</div>

@@ -1,0 +1,10 @@
+﻿.Reply {
+    border-width: 0px;
+    background-color: #fff;
+    color: grey;
+}
+
+.Reply-row {
+    color: grey;
+    padding:10px 0px;
+}

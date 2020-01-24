@@ -4,7 +4,10 @@ import './Caption.css';
 import Like from '../Like/Like.js';
 import LikeReply from '../LikeReply/LikeReply.js';
 import Action from '../Action/Action.js';
+import ReplyRow from '../ReplyRow/ReplyRow.js';
 import { Link } from 'react-router-dom';
+import { displayData } from '../../App.js';
+import { displayDataL } from '../../App.js';
 
 class Caption extends Component {
 	constructor(props) {
@@ -15,60 +18,36 @@ class Caption extends Component {
 			postVal: "",
 			comments: 3
 		};
-		this.displayData = [];
 		this.appendData = this.appendData.bind(this);
 		this.handleChange = this.handleChange.bind(this);
-
-		this.displayData.push(
-			<div className="Post-caption-comment-text">
-				<span><strong>Ryan</strong> Let's go!</span>
-				<LikeReply />
-			</div>
-		);
-
-		this.displayData.push(
-			<div className="Post-caption-comment-text">
-				<span><strong>Rong</strong> I'll be there!</span>
-				<LikeReply />
-			</div>
-		);
-
-		this.displayData.push(
-			<div className="Post-caption-comment-text">
-				<span><strong>Jenny</strong> You're so cool!</span>
-				<LikeReply />
-			</div>
-		);
 	}
 	
-	appendData() {
-		this.displayData.push(
-			<div className="Post-caption-comment-text">
-				<span><strong>Henry</strong> {this.state.postVal}</span>
-				<LikeReply />
-			</div>
-		);
+	appendData() {		
         this.setState((prevState, props) => {
 			return {
-				showdata: this.displayData,
+				showdata: displayData,
 				postVal: "",
 				posting: "empty",
 				comments: prevState.comments + 1
 			};
 		});
-		/*
-		localStorage.setItem(this.state.comments, 
+		
+		displayDataL.push(
+			<div className="Whole-row">
+				<div className="Post-caption-comment-text">
+					<span><strong>Henry</strong> {this.state.postVal}</span>
+					<LikeReply />
+				</div>
+				<ReplyRow time="1s" likes="0" username="@Henry"/>
+			</div>
+		);
+		displayData.push(
 			<div className="Post-caption-comment-text">
 				<span><strong>Henry</strong> {this.state.postVal}</span>
 				<LikeReply />
 			</div>
 		);
 
-		for (var i = 0; i < localStorage.length; i++) {  
-			var key = localStorage.key(i);
-			this.displayData.push(localStorage.getItem(key));
-		}
-		*/
 		var input = document.querySelector('input');
 		input.value = "";
 	}
@@ -103,10 +82,10 @@ class Caption extends Component {
 					</div>
 
 					<div className="Post-caption-comment">
-						<Link to="/landscape"><button>{"View all " + this.state.comments + " comments"}</button></Link>
+						<Link to="/landscape"><button>{"View all " + displayData.length + " comments"}</button></Link>
 					</div>
 					<div className="Post-caption-comment-section">
-					{this.displayData}
+					{displayData}
 					</div>
 					<div className="Post-caption-comment-time">
 						42 MINUTES AGO

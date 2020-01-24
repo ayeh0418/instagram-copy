@@ -4,14 +4,31 @@
     height: 30px;
 }
 
+.Post-user-avatar {
+    width: 30px;
+    height: 30px;
+}
+
 .Post-and-caption {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    min-height: 86%;
+    max-height: 100%;
+}
+
+.Post-and-caption-bottom {
+    margin-top: auto;
+}
+
+.LPost-caption-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 }
 
 .LPost-caption-caption {
-    display: flex;
-    justify-content: space-between;
-    margin-right: 0px;
+    display: inline-block;
+    width: 85%;
 }
 
 .Post-caption {

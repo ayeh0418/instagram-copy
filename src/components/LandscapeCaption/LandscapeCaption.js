@@ -3,9 +3,12 @@ import React, { Component } from 'react';
 import './LandscapeCaption.css';
 import Like from '../Like/Like.js';
 import LikeReply from '../LikeReply/LikeReply.js';
+import ReplyRow from '../ReplyRow/ReplyRow.js';
 import Action from '../Action/Action.js';
 import user1 from '../../images/profile.jpg';
 import { Link } from 'react-router-dom';
+import { displayDataL } from '../../App.js';
+import { displayData } from '../../App.js';
 
 class LandscapeCaption extends Component {
 	constructor(props) {
@@ -16,60 +19,36 @@ class LandscapeCaption extends Component {
 			postVal: "",
 			comments: 3
 		};
-		this.displayData = [];
 		this.appendData = this.appendData.bind(this);
 		this.handleChange = this.handleChange.bind(this);
-
-		this.displayData.push(
-			<div className="Post-caption-comment-text">
-				<span><strong>Ryan</strong> Let's go!</span>
-				<LikeReply />
-			</div>
-		);
-
-		this.displayData.push(
-			<div className="Post-caption-comment-text">
-				<span><strong>Rong</strong> I'll be there!</span>
-				<LikeReply />
-			</div>
-		);
-
-		this.displayData.push(
-			<div className="Post-caption-comment-text">
-				<span><strong>Jenny</strong> You're so cool!</span>
-				<LikeReply />
-			</div>
-		);
 	}
 	
 	appendData() {
-		this.displayData.push(
+		displayData.push(
 			<div className="Post-caption-comment-text">
 				<span><strong>Henry</strong> {this.state.postVal}</span>
 				<LikeReply />
 			</div>
 		);
+		displayDataL.push(
+			<div className="Whole-row">
+				<div className="Post-caption-comment-text">
+					<span><strong>Henry</strong> {this.state.postVal}</span>
+					<LikeReply />
+				</div>
+				<ReplyRow time="1s" likes="0" username="@Henry"/>
+			</div>
+		);
+
         this.setState((prevState, props) => {
 			return {
-				showdata: this.displayData,
+				showdata: displayData,
 				postVal: "",
 				posting: "empty",
 				comments: prevState.comments + 1
 			};
 		});
-		/*
-		localStorage.setItem(this.state.comments, 
-			<div className="Post-caption-comment-text">
-				<span><strong>Henry</strong> {this.state.postVal}</span>
-				<LikeReply />
-			</div>
-		);
 
-		for (var i = 0; i < localStorage.length; i++) {  
-			var key = localStorage.key(i);
-			this.displayData.push(localStorage.getItem(key));
-		}
-		*/
 		var input = document.querySelector('input');
 		input.value = "";
 	}
@@ -97,29 +76,31 @@ class LandscapeCaption extends Component {
 
 	render() {
 		return (
-			<span className="Post-and-caption">
+			<div className="Post-and-caption">
 				<div className="Post-caption">
-					<div className="LPost-caption-caption">
+					<div className="LPost-caption-box">
 						<div className="Post-user-avatar">
 							<img src={user1} alt="Andrew" />
 						</div>
-						<div>
+						<div className="LPost-caption-caption">
 							<a href=""><strong> Andrew</strong></a> Teaching a dance workshop tonight. Come through!
 						</div>
 					</div>
 					<div className="Post-caption-comment-section">
-					{this.displayData}
+					{displayDataL}
 					</div>
 				</div>
-				<Action />
-				<div className="LPost-caption-comment-time">
-					42 MINUTES AGO
+				<div className="Post-and-caption-bottom">
+					<Action />
+					<div className="LPost-caption-comment-time">
+						42 MINUTES AGO
+					</div>
+					<div className="Post-input">
+						<input type="text" onChange={this.handleChange} placeholder="Add a comment..." />
+						<button id={this.state.posting} onClick={this.appendData} disabled={!this.state.postVal}><strong>Post</strong></button>
+					</div>
 				</div>
-				<div className="Post-input">
-					<input type="text" onChange={this.handleChange} placeholder="Add a comment..." />
-					<button id={this.state.posting} onClick={this.appendData} disabled={!this.state.postVal}><strong>Post</strong></button>
-				</div>
-			</span>
+			</div>
 		);
 	}
 }

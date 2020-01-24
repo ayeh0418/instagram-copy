@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header/Header.js';
 import Post from './components/Post/Post.js';
 import LikeReply from './components/LikeReply/LikeReply.js';
+import ReplyRow from './components/ReplyRow/ReplyRow.js';
 import Landscape from './pages/Landscape.js';
 import Home from './pages/Home.js';
 import {  
@@ -13,25 +14,61 @@ import {
 	Link 
 } from 'react-router-dom';
 
-export default function App() {
+// array to store all comments
+var displayDataL = [];
+var	displayData =[];
 
-	localStorage.setItem(0, 
+displayDataL.push(
+	<div className="Whole-comment">
 		<div className="Post-caption-comment-text">
 			<span><strong>Ryan</strong> Let's go!</span>
 			<LikeReply />
 		</div>
-	);
-	localStorage.setItem(1, 
+		<ReplyRow time="40m" likes="2" username="@Ryan"/>
+	</div>
+);
+displayData.push(
+	<div className="Post-caption-comment-text">
+		<span><strong>Ryan</strong> Let's go!</span>
+		<LikeReply />
+	</div>
+);
+
+displayDataL.push(
+	<div className="Whole-comment">
 		<div className="Post-caption-comment-text">
-			<span><strong>Rong</strong> I will be there!</span>
-			<LikeReply />
-		</div>);
-	localStorage.setItem(2, 
+			<span><strong>Rong</strong> I'll be there!</span>
+			<LikeReply />	
+		</div>
+		<ReplyRow time="38m" likes="3" username="@Rong"/>
+	</div>
+);
+displayData.push(
+	<div className="Post-caption-comment-text">
+		<span><strong>Rong</strong> I'll be there!</span>
+		<LikeReply />
+	</div>
+);
+
+displayDataL.push(
+	<div className="Whole-comment">
 		<div className="Post-caption-comment-text">
 			<span><strong>Jenny</strong> You're so cool!</span>
 			<LikeReply />
 		</div>
-	);
+		<ReplyRow time="24m" likes="4" username="@Jenny"/>
+	</div>
+);
+displayData.push(
+	<div className="Post-caption-comment-text">
+		<span><strong>Jenny</strong> You're so cool!</span>
+		<LikeReply />
+	</div>
+);
+export { displayDataL };
+export { displayData };
+
+export default function App() {
 
 	return (
 		<Router>
