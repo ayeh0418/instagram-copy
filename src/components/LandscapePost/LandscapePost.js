@@ -1,11 +1,12 @@
-import "./LandscapePost.css";
-import React, { Component } from "react";
+import './LandscapePost.css';
+import React, { Component } from 'react';
 import post from '../../images/post.jpg';
 import Title from '../Title/Title.js';
 import Caption from '../Caption/Caption.js';
 import LCaption from '../LandscapeCaption/LandscapeCaption.js';
 import LikeReply from '../LikeReply/LikeReply.js';
 
+// organize the layout of the post in landscape mode
 class LandscapePost extends Component {
 	render() {
 		return (

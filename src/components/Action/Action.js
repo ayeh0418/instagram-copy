@@ -1,9 +1,9 @@
-// JavaScript source code
 import React from 'react';
 import './Action.css';
 import Like from '../Like/Like.js';
 import { Link } from 'react-router-dom';
 
+// like, comment, send, and bookmark buttons
 export default function Action() {
 	return (
 		<div className="Post-actions">
@@ -21,4 +21,4 @@ export default function Action() {
 			</div>
 		</div>
 	);
-}// JavaScript source code
+}

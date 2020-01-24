@@ -2,8 +2,9 @@ import React from 'react';
 import './LikeReply.css';
 import ReplyRow from '../ReplyRow/ReplyRow.js'
 
-class likeReply extends React.Component {
+var likes = 2; // trying to pass this to ReplyRow to show the number of likes for the reply
 
+class likeReply extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -14,7 +15,9 @@ class likeReply extends React.Component {
 		this.button = <button id="unlike" onClick={this.updateLikes}></button>;
 	}
 
+	// determine like or unlike
 	updateLikes() {
+		// like
 		if (!this.state.updated) {
 			this.setState((prevState, props) => {
 				return {
@@ -23,6 +26,7 @@ class likeReply extends React.Component {
 				};
 			});
 			this.button = <button id="like" onClick={this.updateLikes}></button>;
+		// unlike
 		} else {
 			this.setState((prevState, props) => {
 				return {
@@ -32,6 +36,7 @@ class likeReply extends React.Component {
 			});
 			this.button = <button id="unlike" onClick={this.updateLikes}></button>;
 		}
+		likes = this.state.likes;
 	}
 
 	render() {
@@ -43,5 +48,6 @@ class likeReply extends React.Component {
 			</div>
 		);
 	}
-}
+}	
+export { likes };
 export default likeReply;

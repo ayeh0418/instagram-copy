@@ -1,4 +1,3 @@
-// JavaScript source code
 import React, { Component } from 'react';
 import './LandscapeCaption.css';
 import Like from '../Like/Like.js';
@@ -10,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { displayDataL } from '../../App.js';
 import { displayData } from '../../App.js';
 
+// text portion of the post in landscape mode
 class LandscapeCaption extends Component {
 	constructor(props) {
 		super(props);
@@ -23,7 +23,9 @@ class LandscapeCaption extends Component {
 		this.handleChange = this.handleChange.bind(this);
 	}
 	
+	// add comment
 	appendData() {
+		// store the new comment to the global arrays
 		displayData.push(
 			<div className="Post-caption-comment-text">
 				<span><strong>Henry</strong> {this.state.postVal}</span>
@@ -49,10 +51,12 @@ class LandscapeCaption extends Component {
 			};
 		});
 
+		// clear the input field
 		var input = document.querySelector('input');
 		input.value = "";
 	}
 
+	// record the comment
 	handleChange(e) {
 		let getValue = e.target.value;
 		this.setState({
@@ -77,7 +81,7 @@ class LandscapeCaption extends Component {
 	render() {
 		return (
 			<div className="Post-and-caption">
-				<div className="Post-caption">
+				<div className="LPost-caption">
 					<div className="LPost-caption-box">
 						<div className="Post-user-avatar">
 							<img src={user1} alt="Andrew" />

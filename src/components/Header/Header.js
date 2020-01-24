@@ -1,8 +1,8 @@
-// src/components/Header/index.js
 import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
+// top of the page, including logo, search bar, and other icons
 class Header extends React.Component{
     render(){
         return (

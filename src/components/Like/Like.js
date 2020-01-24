@@ -1,8 +1,8 @@
 ﻿import React from 'react';
-import "./Like.css";
+import './Like.css';
 
+// like the post functionality
 class like extends React.Component {
-
 	constructor(props){
 		super(props);
 		this.state = {
@@ -13,7 +13,9 @@ class like extends React.Component {
 		this.button = <button id="unlike" onClick={this.updateLikes}></button>;
 	}
 
+	// determine like or unlike
 	updateLikes() {
+		// like
 		if (!this.state.updated) {
 			this.setState((prevState, props) => {
 				return {
@@ -22,6 +24,7 @@ class like extends React.Component {
 				};
 			});
 			this.button = <button id="like" onClick={this.updateLikes}></button>;
+		// unlike
 		} else {
 			this.setState((prevState, props) => {
 				return {

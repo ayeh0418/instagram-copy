@@ -1,4 +1,3 @@
-// src.App.js
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header/Header.js';
@@ -14,10 +13,11 @@ import {
 	Link 
 } from 'react-router-dom';
 
-// array to store all comments
-var displayDataL = [];
-var	displayData =[];
+// arrays to store all comments
+var displayDataL = []; // for landscape view
+var	displayData =[];   // for normal view
 
+// initial comments
 displayDataL.push(
 	<div className="Whole-comment">
 		<div className="Post-caption-comment-text">
@@ -69,13 +69,10 @@ export { displayDataL };
 export { displayData };
 
 export default function App() {
-
 	return (
 		<Router>
 			<div>
 				<Header />
-				{/* A <Switch> looks through its children <Route>s and
-				renders the first one that matches the current URL. */}
 				<Switch>
 					<Route path="/landscape">
 						<Landscape />

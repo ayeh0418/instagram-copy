@@ -1,8 +1,8 @@
-// JavaScript source code
 import React from 'react';
 import user1 from '../../images/profile.jpg';
 import './Title.css';
 
+// top part of the post
 export default function Title() {
 	return (
 		<header>

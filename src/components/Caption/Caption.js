@@ -1,4 +1,3 @@
-// JavaScript source code
 import React, { Component } from 'react';
 import './Caption.css';
 import Like from '../Like/Like.js';
@@ -9,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { displayData } from '../../App.js';
 import { displayDataL } from '../../App.js';
 
+// text portion of the post
 class Caption extends Component {
 	constructor(props) {
 		super(props);
@@ -22,6 +22,7 @@ class Caption extends Component {
 		this.handleChange = this.handleChange.bind(this);
 	}
 	
+	// add comment
 	appendData() {		
         this.setState((prevState, props) => {
 			return {
@@ -32,6 +33,7 @@ class Caption extends Component {
 			};
 		});
 		
+		// store jsx of the new comment to the global arrays
 		displayDataL.push(
 			<div className="Whole-row">
 				<div className="Post-caption-comment-text">
@@ -48,10 +50,12 @@ class Caption extends Component {
 			</div>
 		);
 
+		// clear the input field
 		var input = document.querySelector('input');
 		input.value = "";
 	}
 
+	// record the comment
 	handleChange(e) {
 		let getValue = e.target.value;
 		this.setState({
